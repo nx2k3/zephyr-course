@@ -1,8 +1,23 @@
+choice
+  prompt "LED blink speed"
+  default BLINK_SLEEP_1000MS
+
+config BLINK_SLEEP_250MS
+  bool "Fast (250ms)"
+
+config BLINK_SLEEP_1000MS
+  bool "Medium (1s)"
+
+config BLINK_SLEEP_2000MS
+  bool "Slow (2s)"
+
+endchoice
+
 config BLINK_SLEEP_TIME_MS
-  int "LED blink interval (ms)"
-  default 1000
-  range 100 5000
-  help
-    Time between LED toggles in milliseconds.
+  int # No prompt hidden
+  default 250 if BLINK_SLEEP_250MS
+  default 1000 if BLINK_SLEEP_1000MS
+  default 2000 if BLINK_SLEEP_2000MS
+  default 0
 
 source "Kconfig.zephyr"

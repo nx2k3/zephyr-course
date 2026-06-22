@@ -1,5 +1,10 @@
 / {
   aliases {
-      app-led = &green_led_2;
+     sensor-led  = &green_led_2;
+  };
+
+  custom_led0: custom_led {
+    compatible = "custom,led_driver";
+    status = "okay";
   };
 };

@@ -1,0 +1,3 @@
+description: Custom Led Driver
+compatible: "custom,driver"
+include: base.yaml

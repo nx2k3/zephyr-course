@@ -1,0 +1,3 @@
+config CUSTOM_LED_DRIVER
+    bool "Custom Led driver"
+    default y

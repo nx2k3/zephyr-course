@@ -1,3 +1,6 @@
 if(CONFIG_CUSTOM_LED_DRIVER)
-    target_sources(app PRIVATE custom_led_driver.c custom_led_driver.h)
+  target_sources(app PRIVATE custom_led_driver.c custom_led_driver.h )
+  if(CONFIG_SHELL)
+    target_sources(app PRIVATE custom_led_shell.c)
+  endif()
 endif()

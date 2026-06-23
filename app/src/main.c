@@ -28,9 +28,13 @@ int main(void) {
   custom_led_set_blink_counter(custom_led, 10);
 
   while (1) {
+    /*
+     * blink now controlled by shell
     custom_led_channel_get();
     k_msleep(CONFIG_APP_HEARTBEAT_PERIOD_MS);
     custom_led_sample_fetch();
+    k_msleep(CONFIG_APP_HEARTBEAT_PERIOD_MS);
+    */
     k_msleep(CONFIG_APP_HEARTBEAT_PERIOD_MS);
   }
   return 0;

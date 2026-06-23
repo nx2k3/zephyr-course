@@ -1,3 +1,4 @@
+#include "../drivers/custom_led/custom_led_driver.h"
 #include <zephyr/drivers/sensor.h>
 #include <zephyr/kernel.h>
 #include <zephyr/logging/log.h>
@@ -23,6 +24,9 @@ int custom_led_sample_fetch() {
 int main(void) {
   if (!device_is_ready(custom_led))
     return 0;
+
+  custom_led_set_blink_counter(custom_led, 10);
+
   while (1) {
     custom_led_channel_get();
     k_msleep(CONFIG_APP_HEARTBEAT_PERIOD_MS);

@@ -3,8 +3,13 @@
      sensor-led  = &green_led_2;
   };
 
-  custom_led0: custom_led {
+  custom_led0: custom_led_blue {
     compatible = "custom,led_driver";
     status = "okay";
   };
+  custom_led1: custom_led_green {
+    compatible = "custom,led_driver";
+    status = "okay";
+  };
+
 };
